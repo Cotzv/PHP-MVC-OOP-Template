@@ -1,0 +1,26 @@
+
+<?php  include VIEW.'header.phtml'; ?> 
+
+    <?php 
+        if(array_key_exists('cars',$this->view_data)){
+
+            $table = '<table class="table" border=1>';
+
+            foreach ($this->view_data['cars'] as $car){
+
+                $car_info = explode(',',$car);
+                $table .= '<tr class="table-primary">';
+                foreach($car_info as $item){
+
+                    $table .= '<td class="table-primary">'.$item.'</td>';
+                }
+
+                $table .= '</tr>';
+            }
+
+            $table .= '</table>';
+            echo $table.'<br>';
+        }
+    ?>
+
+<?php include VIEW.'footer.phtml'; ?>
